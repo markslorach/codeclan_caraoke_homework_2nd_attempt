@@ -9,6 +9,7 @@ class TestSong(unittest.TestCase):
        
        self.song_1 = Song("The Bitter End", "Placebo")
        self.song_2 = Song("Inner City Life", "Goldie")
+       self.song_3 = Song("Late Night Talking", "Harry Styles")
 
     
     def test_song_has_title(self):
