@@ -9,9 +9,9 @@ class Room:
     
     def check_in_guest(self, guest):
         if guest.guest_money >= self.entry_fee and len(self.guests) <= self.capacity:
-            self.guests.append(guest)
             guest.guest_money -= self.entry_fee
-   
+            self.guests.append(guest)
+            
     def check_out_guest(self, guest):
         if guest in self.guests:
             self.guests.remove(guest)
