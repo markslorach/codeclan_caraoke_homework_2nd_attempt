@@ -5,20 +5,18 @@ class Room:
         self.entry_fee = entry_fee
         self.guests = []
         self.songs = []
-        
-        
-    def check_in_guest(self, guest):
-        self.guests.append(guest)
 
-    ''' 
-    check_out_guest
-    if there is a guest in the room guests list
-    remove the guest from the room guests list
-    '''
     
+    def check_in_guest(self, guest):
+        if guest.guest_money >= self.entry_fee and len(self.guests) <= self.capacity:
+            self.guests.append(guest)
+            guest.guest_money -= self.entry_fee
+   
     def check_out_guest(self, guest):
         if guest in self.guests:
             self.guests.remove(guest)
     
     def add_song_to_room(self, song):
         self.songs.append(song)
+
+    
