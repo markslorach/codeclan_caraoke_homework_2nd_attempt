@@ -29,12 +29,10 @@ class TestRoom(unittest.TestCase):
         self.room.check_in_guest(self.guest_2)
         self.assertEqual([self.guest_2], self.room.guests)
 
-    
-    # def test_check_out_guest(self):
-    #     pass
-    
-    
-    
+    def test_check_out_guest(self):
+        self.room.check_out_guest(self.guest_2)
+        self.assertEqual([], self.room.guests)
+     
     def test_add_song_to_room(self):
         self.room.add_song_to_room(self.song_2)
         self.assertEqual([self.song_2], self.room.songs)
