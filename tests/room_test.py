@@ -29,7 +29,7 @@ class TestRoom(unittest.TestCase):
         self.room.check_in_guest(self.guest_2)
         self.assertEqual([self.guest_2], self.room.guests)
 
-    def test_check_guest_money(self):
+    def test_charge_entry_fee(self):
         self.room.check_in_guest(self.guest_1)
         self.assertEqual(80, self.guest_1.guest_money)
 
@@ -40,3 +40,4 @@ class TestRoom(unittest.TestCase):
     def test_add_song_to_room(self):
         self.room.add_song_to_room(self.song_2)
         self.assertEqual([self.song_2], self.room.songs)
+
